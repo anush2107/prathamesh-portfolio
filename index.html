@@ -1,363 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prathamesh Chougule</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-<style>
-/* ================= GLOBAL ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-body {
-  background: #f5f5f5;
-  color: #333;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prathamesh Chougule</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ================= GLOBAL ================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-/* ================= TOP BAR ================= */
-.topbar {
-  background: linear-gradient(90deg, #1f1f1f, #333);
-  padding: 20px;
-  color: white;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-.topbar h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-  letter-spacing: 3px;
-}
-.line {
-  width: 60px;
-  height: 5px;
-  background: #ff4d4d;
-  margin: 12px auto 0;
-  border-radius: 3px;
-}
+    body {
+      background: #f5f5f5;
+      color: #333;
+    }
 
-/* ================= MENU ================= */
-.menu {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-}
-.menu button {
-  background: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.menu button:hover {
-  background: #e60000;
-}
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  background: white;
-  min-width: 220px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 10;
-}
-.dropdown a {
-  display: block;
-  padding: 12px 16px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.dropdown a:hover { 
-  background: #f8f8f8;
-}
-.menu:hover .dropdown { display: block; }
+    /* ================= TOP BAR ================= */
+    .topbar {
+      background: linear-gradient(90deg, #1f1f1f, #333);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
 
-/* ================= PAGE ================= */
-.page { display: none; padding: 50px 20px; animation: fadeIn 0.6s ease; }
-@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+    .topbar h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 40px;
+      letter-spacing: 3px;
+    }
 
-/* ================= HOME ================= */
-.home img {
-  width: 250px;
-  margin: 50px auto;
-  display: block;
-  border-radius: 50%;
-  border: 5px solid #ff4d4d;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+    .line {
+      width: 60px;
+      height: 5px;
+      background: #ff4d4d;
+      margin: 12px auto 0;
+      border-radius: 3px;
+    }
 
-/* ================= SECTION HEADER ================= */
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.section-header h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #ff4d4d;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-.section-line {
-  width: 80px;
-  height: 4px;
-  background: #333;
-  margin: 0 auto;
-  border-radius: 2px;
-}
+    /* ================= MENU ================= */
+    .menu {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+    }
 
-/* ================= SECTION CONTENT ================= */
-.section-content {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #444;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+    .menu button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-/* ================= ABOUT ================= */
-.about-section {
-  display: flex;
-  gap: 40px;
-  max-width: 1000px;
-  margin: auto;
-  flex-wrap: wrap;
-}
-.about-image img {
-  width: 300px;
-  border-radius: 12px;
-  border: 3px solid #ff4d4d;
-}
-.about-text p {
-  margin-bottom: 12px;
-}
+    .menu button:hover {
+      background: #e60000;
+    }
 
-/* ================= SWOT ================= */
-.swot-container {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.swot-box {
-  flex: 1 1 250px;
-  text-align: center;
-  background: #ff4d4d20;
-  padding: 25px 15px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-.swot-box:hover {
-  background: #ff4d4d30;
-  transform: translateY(-5px);
-}
-.swot-box img {
-  width: 100px;
-  margin-bottom: 15px;
-}
-.swot-box h3 {
-  color: #ff4d4d;
-  margin-bottom: 12px;
-}
-.swot-box ol {
-  text-align: left;
-  padding-left: 20px;
-}
-.swot-box ol li {
-  margin-bottom: 8px;
-}
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      min-width: 220px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+    }
 
-/* ================= ACHIEVEMENTS, GOAL, FAMILY ================= */
-.achievement-flex, .goal-flex, .family-wrapper {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.achievement-img img, .goal-img img, .family-image img {
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-.achievement-text h1, .goal-text h1, .family-text h1 {
-  color: #ff4d4d;
-  margin-bottom: 15px;
-}
-.achievement-text p, .goal-text h2, .family-text h2 {
-  font-size: 18px;
-  color: #333;
-}
+    .dropdown a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .about-section, .swot-container, .achievement-flex, .goal-flex, .family-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-  .topbar h1 { font-size: 30px; }
-  .section-header h2 { font-size: 28px; }
-}
-</style>
+    .dropdown a:hover {
+      background: #f8f8f8;
+    }
+
+    .dropdown.show {
+      display: block;
+    }
+
+
+    /* ================= PAGE ================= */
+    .page {
+      display: none;
+      padding: 50px 20px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* ================= HOME ================= */
+    .home img {
+      width: 250px;
+      margin: 50px auto;
+      display: block;
+      border-radius: 50%;
+      border: 5px solid #ff4d4d;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ================= SECTION HEADER ================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #ff4d4d;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-line {
+      width: 80px;
+      height: 4px;
+      background: #333;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    /* ================= SECTION CONTENT ================= */
+    .section-content {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ================= ABOUT ================= */
+    .about-section {
+      display: flex;
+      gap: 40px;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .about-image img {
+      width: 300px;
+      border-radius: 12px;
+      border: 3px solid #ff4d4d;
+    }
+
+    .about-text p {
+      margin-bottom: 12px;
+    }
+
+    /* ================= SWOT ================= */
+    .swot-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .swot-box {
+      flex: 1 1 250px;
+      text-align: center;
+      background: #ff4d4d20;
+      padding: 25px 15px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .swot-box:hover {
+      background: #ff4d4d30;
+      transform: translateY(-5px);
+    }
+
+    .swot-box img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .swot-box h3 {
+      color: #ff4d4d;
+      margin-bottom: 12px;
+    }
+
+    .swot-box ol {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .swot-box ol li {
+      margin-bottom: 8px;
+    }
+
+    /* ================= ACHIEVEMENTS, GOAL, FAMILY ================= */
+    .achievement-flex,
+    .goal-flex,
+    .family-wrapper {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .achievement-img img,
+    .goal-img img,
+    .family-image img {
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .achievement-text h1,
+    .goal-text h1,
+    .family-text h1 {
+      color: #ff4d4d;
+      margin-bottom: 15px;
+    }
+
+    .achievement-text p,
+    .goal-text h2,
+    .family-text h2 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 900px) {
+
+      .about-section,
+      .swot-container,
+      .achievement-flex,
+      .goal-flex,
+      .family-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .topbar h1 {
+        font-size: 30px;
+      }
+
+      .section-header h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<div class="topbar">
-  <div class="menu">
-    <button>Menu ☰</button>
-    <div class="dropdown">
-      <a onclick="showPage('home')">Home</a>
-      <a onclick="showPage('about')">About Me</a>
-      <a onclick="showPage('swot')">SWOT Analysis</a>
-      <a onclick="showPage('achievements')">Achievements</a>
-      <a onclick="showPage('goal')">Goal</a>
-      <a onclick="showPage('family')">About Family</a>
-      <a onclick="showPage('education')">Education</a>
-      <a onclick="showPage('role')">Role Model</a>
-    </div>
-  </div>
-  <h1>Prathamesh Chougule</h1>
-  <div class="line"></div>
-</div>
+  <!-- ================= HEADER ================= -->
+  <div class="topbar">
+    <div class="menu">
+      <!-- <button>Menu ☰</button> -->
+      <button onclick="toggleMenu()">Menu ☰</button>
 
-<!-- ================= HOME ================= -->
-<div class="page home" id="home" style="display:block;">
-  <img src="assets/images/your-image.jpg" alt="Profile">
-</div>
+      <div class="dropdown">
+        <a onclick="showPage('home'); closeMenu()">Home</a>
+        <a onclick="showPage('about'); closeMenu()">About Me</a>
+        <a onclick="showPage('swot'); closeMenu()">SWOT Analysis</a>
+        <a onclick="showPage('achievements'); closeMenu()">Achievements</a>
+        <a onclick="showPage('goal'); closeMenu()">Goal</a>
+        <a onclick="showPage('family'); closeMenu()">About Family</a>
+        <a onclick="showPage('education'); closeMenu()">Education</a>
+        <a onclick="showPage('role'); closeMenu()">Role Model</a>
 
-<!-- ================= ABOUT ================= -->
-<div class="page" id="about">
-  <div class="section-header">
-    <h2>ABOUT ME</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-section">
-    <div class="about-image">
-      <img src="assets/images/your-image.jpg" alt="Profile">
+      </div>
     </div>
-    <div class="about-text">
-      <p>My name is Prathamesh Chougule.</p>
-      <p>I am pursuing BBA (First Year) at ADCET, Ashta.</p>
-      <p>I am interested in business management and marketing.</p>
-    </div>
+    <h1>Prathamesh Chougule</h1>
+    <div class="line"></div>
   </div>
-</div>
 
-<!-- ================= SWOT ================= -->
-<div class="page" id="swot">
-  <div class="section-header">
-    <h2>SWOT ANALYSIS</h2>
-    <div class="section-line"></div>
+  <!-- ================= HOME ================= -->
+  <div class="page home" id="home" style="display:block;">
+    <img src="assets/images/your-image.jpg" alt="Profile">
   </div>
-  <div class="swot-container">
-    <div class="swot-box">
-      <img src="assets/images/str.jpg" alt="Strength">
-      <h3>STRENGTH</h3>
-      <ol>
-        <li>Creative</li>
-        <li>Intelligent</li>
-        <li>Hardworking</li>
-        <li>Determined</li>
-        <li>Energetic</li>
-      </ol>
-    </div>
-    <div class="swot-box">
-      <img src="assets/images/link.jpg" alt="Weakness">
-      <h3>WEAKNESS</h3>
-      <ol>
-        <li>Lazy</li>
-        <li>Shy</li>
-        <li>Self Critic</li>
-        <li>Aggressive</li>
-        <li>Passive</li>
-      </ol>
-    </div>
-  </div>
-</div>
 
-<!-- ================= ACHIEVEMENTS ================= -->
-<div class="page" id="achievements">
-  <div class="section-header">
-    <h2>ACHIEVEMENTS</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="achievement-flex">
-    <div class="achievement-img">
-      <img src="assets/images/medal.jpg" alt="Achievements">
+  <!-- ================= ABOUT ================= -->
+  <div class="page" id="about">
+    <div class="section-header">
+      <h2>ABOUT ME</h2>
+      <div class="section-line"></div>
     </div>
-    <div class="achievement-text">
-      <h1>Consistently working towards self-improvement through discipline, teamwork, and learning new concepts in business studies.</h1>
-    </div>
-  </div>
-</div>
-
-<!-- ================= GOAL ================= -->
-<div class="page" id="goal">
-  <div class="section-header">
-    <h2>GOAL</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="goal-flex">
-    <div class="goal-img">
-      <img src="assets/images/goal.jpg" alt="My Goal">
-    </div>
-    <div class="goal-text">
-      <h1>MY GOALS</h1>
-      <h2>Build strong problem-solving and decision-making skills required in the corporate world.</h2>
+    <div class="about-section">
+      <div class="about-image">
+        <img src="assets/images/your-image.jpg" alt="Profile">
+      </div>
+      <div class="about-text">
+        <p>My name is Prathamesh Chougule.</p>
+        <p>I am pursuing BBA (First Year) at ADCET, Ashta.</p>
+        <p>I am interested in business management and marketing.</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ================= FAMILY ================= -->
-<div class="page" id="family">
-  <div class="family-wrapper">
-    
-    <div class="family-text">
-      <h1>ABOUT MY FAMILY</h1>
-      <h2>I belong to a supportive and well-disciplined family that believes in strong values, honesty, and education. My family members always motivate me to work hard and achieve my goals. Their constant support and guidance play an important role in shaping my personality and helping me move forward in life.</h2>
+  <!-- ================= SWOT ================= -->
+  <div class="page" id="swot">
+    <div class="section-header">
+      <h2>SWOT ANALYSIS</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="swot-container">
+      <div class="swot-box">
+        <img src="assets/images/str.jpg" alt="Strength">
+        <h3>STRENGTH</h3>
+        <ol>
+          <li>Creative</li>
+          <li>Intelligent</li>
+          <li>Hardworking</li>
+          <li>Determined</li>
+          <li>Energetic</li>
+        </ol>
+      </div>
+      <div class="swot-box">
+        <img src="assets/images/link.jpg" alt="Weakness">
+        <h3>WEAKNESS</h3>
+        <ol>
+          <li>Lazy</li>
+          <li>Shy</li>
+          <li>Self Critic</li>
+          <li>Aggressive</li>
+          <li>Passive</li>
+        </ol>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ================= EDUCATION ================= -->
-<div class="page" id="education">
-  <div class="section-content">
-    <h1>EDUCATION</h1>
-    <p>Bachelor of Business Administration (BBA - First Year)<br>Annasaheb Dange College of Engineering and Technology, Ashta</p>
-    <p>Higher Secondary Certificate (HSC - 12th)<br>Maharashtra State Board</p>
-    <p>Secondary School Certificate (SSC - 10th)<br>Maharashtra State Board</p>
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <div class="page" id="achievements">
+    <div class="section-header">
+      <h2>ACHIEVEMENTS</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="achievement-flex">
+      <div class="achievement-img">
+        <img src="assets/images/medal.jpg" alt="Achievements">
+      </div>
+      <div class="achievement-text">
+        <h1>Consistently working towards self-improvement through discipline, teamwork, and learning new concepts in
+          business studies.</h1>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- ================= ROLE MODEL ================= -->
-<div class="page" id="role">
-  <div class="section-content">
-    <h1>ROLE MODEL</h1>
-    <p>My role model is Ratan Tata, a renowned Indian industrialist and former Chairman of the Tata Group. I admire him for his leadership, integrity, simplicity, and commitment to ethical business practices. His vision for innovation, social responsibility, and nation-building inspires me to work hard, stay humble, and contribute positively to society. Ratan Tata’s life and values motivate me to become a responsible and successful professional in the field of management.</p>
+  <!-- ================= GOAL ================= -->
+  <div class="page" id="goal">
+    <div class="section-header">
+      <h2>GOAL</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="goal-flex">
+      <div class="goal-img">
+        <img src="assets/images/goal.jpg" alt="My Goal">
+      </div>
+      <div class="goal-text">
+        <h1>MY GOALS</h1>
+        <h2>Build strong problem-solving and decision-making skills required in the corporate world.</h2>
+      </div>
+    </div>
   </div>
-</div>
 
-<script>
+  <!-- ================= FAMILY ================= -->
+  <div class="page" id="family">
+    <div class="family-wrapper">
+
+      <div class="family-text">
+        <h1>ABOUT MY FAMILY</h1>
+        <h2>I belong to a supportive and well-disciplined family that believes in strong values, honesty, and education.
+          My family members always motivate me to work hard and achieve my goals. Their constant support and guidance
+          play an important role in shaping my personality and helping me move forward in life.</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= EDUCATION ================= -->
+  <div class="page" id="education">
+    <div class="section-content">
+      <h1>EDUCATION</h1>
+      <p>Bachelor of Business Administration (BBA - First Year)<br>Annasaheb Dange College of Engineering and
+        Technology, Ashta</p>
+      <p>Higher Secondary Certificate (HSC - 12th)<br>Maharashtra State Board</p>
+      <p>Secondary School Certificate (SSC - 10th)<br>Maharashtra State Board</p>
+    </div>
+  </div>
+
+  <!-- ================= ROLE MODEL ================= -->
+  <div class="page" id="role">
+    <div class="section-content">
+      <h1>ROLE MODEL</h1>
+      <p>My role model is Ratan Tata, a renowned Indian industrialist and former Chairman of the Tata Group. I admire
+        him for his leadership, integrity, simplicity, and commitment to ethical business practices. His vision for
+        innovation, social responsibility, and nation-building inspires me to work hard, stay humble, and contribute
+        positively to society. Ratan Tata’s life and values motivate me to become a responsible and successful
+        professional in the field of management.</p>
+    </div>
+  </div>
+
+  <!-- <script>
+    function showPage(id) {
+      document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+  </script> -->
+
+
+  <script>
 function showPage(id){
   document.querySelectorAll(".page").forEach(p => p.style.display = "none");
   document.getElementById(id).style.display = "block";
 }
+
+function toggleMenu() {
+  document.querySelector(".dropdown").classList.toggle("show");
+}
+
+function closeMenu() {
+  document.querySelector(".dropdown").classList.remove("show");
+}
 </script>
 
+
 </body>
+
 </html>
